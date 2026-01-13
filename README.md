@@ -339,24 +339,3 @@ SECURITY.md          # MySQL 权限与安全配置建议
 ```
 
 ---
-
-## 学习建议
-
-如果你想通过这个项目学习 MCP + FastMCP + MySQL，可以按这个顺序阅读：
-
-1. 看 `src/mysql_mcp_server/server.py`：
-   - 先理解 `FastMCP` 是如何创建的
-   - 再看 `@app.resource` 和 `@app.tool` 的用法
-2. 跑一遍本地启动：
-   - 设置好环境变量
-   - 用 `uv run mysql_mcp_server` 启动
-   - 观察日志输出
-3. 在 MCP 客户端里实际调用：
-   - 比如在 Claude Desktop 里让模型：“列出所有表”“查看某个表的数据”“执行一条 SELECT 语句”等
-4. 在此基础上自己添加新的工具：
-   - 例如：只读版 `select_rows(table, where)`、统计某个表的数据量等
-
-如果你希望我再帮你：
-- 增加更多示例工具，
-- 或者把 `execute_sql` 改成“只允许 SELECT”的安全版本，
-都可以继续告诉我。 
